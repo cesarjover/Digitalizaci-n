@@ -2,43 +2,27 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Pomodoro</title>
+  <title>Recomendador de Libros</title>
 </head>
 <body>
-  <h1>Pomodoro App</h1>
-  <div id="timer">25:00</div>
-  <button onclick="startTimer()">Iniciar</button>
+  <h1> Recomendador de Libros</h1>
+  <button onclick="getBooks()">Ver recomendaciones</button>
+  <ul id="lista"></ul>
 
   <script>
-    let time = 25 * 60;
-    let timer;
-
-    function update() {
-      const m = String(Math.floor(time / 60)).padStart(2, '0');
-      const s = String(time % 60).padStart(2, '0');
-      document.getElementById('timer').textContent = `${m}:${s}`;
-    }
-
-    function startTimer() {
-      const start = new Date().toISOString();
-      timer = setInterval(() => {
-        time--;
-        update();
-        if (time <= 0) {
-          clearInterval(timer);
-          const end = new Date().toISOString();
-          fetch("http://localhost:3000/save", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ startTime: start, endTime: end })
+    function getBooks() {
+      fetch("http://localhost:3000/libros")
+        .then(res => res.json())
+        .then(data => {
+          const lista = document.getElementById("lista");
+          lista.innerHTML = "";
+          data.forEach(libro => {
+            const li = document.createElement("li");
+            li.textContent = `${libro.titulo} - ${libro.autor}`;
+            lista.appendChild(li);
           });
-          alert("¡Pomodoro terminado!");
-          time = 25 * 60;
-        }
-      }, 1000);
+        });
     }
-
-    update();
   </script>
 </body>
 </html>
