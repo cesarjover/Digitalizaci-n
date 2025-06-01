@@ -1,0 +1,13 @@
+# Mi App Desplegada
+
+## URL pública
+
+La app está desplegada y disponible en:  
+[https://digitalizaci-n.vercel.app/](https://digitalizaci-n.vercel.app/)
+
+## Captura de pantalla
+
+
+## Explicación breve del proceso de despliegue
+
+La aplicación se desplegó en Vercel conectando el repositorio GitHub para despliegues automáticos. Se configuraron las variables de entorno necesarias para conectar con la base de datos de Supabase. Finalmente, se verificó el correcto funcionamiento de la app en la URL pública proporcionada por Vercel.
