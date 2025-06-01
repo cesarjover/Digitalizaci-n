@@ -1,0 +1,28 @@
+# Recomendador de Películas
+
+Aplicación web sencilla para gestionar y mostrar recomendaciones de películas utilizando Supabase como backend.
+
+---
+
+## Estructura de la Tabla `peliculas`
+
+La tabla debe contener las siguientes columnas:
+
+| Columna    | Tipo                | Descripción                         |
+|------------|---------------------|-----------------------------------|
+| id         | serial PRIMARY KEY  | Identificador único autoincremental |
+| titulo     | text                | Título de la película             |
+| genero     | text                | Género de la película             |
+| año        | integer             | Año de estreno                    |
+| created_at | timestamp with time zone | Fecha y hora de creación (por defecto `now()`) |
+
+Ejemplo para crear la tabla en Supabase (SQL):
+
+```sql
+create table peliculas (
+  id serial primary key,
+  titulo text not null,
+  genero text not null,
+  año integer not null,
+  created_at timestamp with time zone default timezone('utc'::text, now())
+);
