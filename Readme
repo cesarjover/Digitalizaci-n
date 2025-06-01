@@ -1,0 +1,35 @@
+# 📚 Recomendador de Libros - De Local a Global
+
+## 🌐 Descripción
+
+Este proyecto consiste en una **aplicación web sencilla** que recomienda libros al usuario. Desarrollada en HTML y JavaScript, esta app consume datos desde una **API REST alojada en un servidor backend**, mostrando dinámicamente una lista de libros recomendados.
+
+El proyecto ha sido desplegado en la nube como parte de la práctica "Tu App en la Nube: De local a global".
+
+---
+
+## 🎯 Objetivo
+
+- Aprender a **crear una app web simple** que interactúe con una API.
+- Subir el proyecto a **GitHub** y **desplegarlo en la nube**.
+- Mostrar cómo se puede llevar una app local a producción usando servicios gratuitos como Vercel o Render.
+
+---
+
+## 🚀 Tecnologías usadas
+
+ ![HTML 5](https://img.shields.io/badge/HTML-5-blue?style=flat&labelColor=%23555&logo=html) HTML 
+ ![JS ](https://img.shields.io/badge/JS--%2300c717?style=flat&labelColor=%23e32b3d&logo=JS) JavaScript (Front-end)
+ ![BD ](https://img.shields.io/badge/BD--%23111ed4?style=flat&labelColor=%237f2dfb&logo=JS) Base de datos
+- [Vercel](https://vercel.com) o [GitHub Pages] para el cliente web
+
+---
+
+## 🛠️ Cómo funciona
+
+1. El usuario hace clic en el botón **"Ver recomendaciones"**.
+2. Se realiza una llamada `fetch` al endpoint: `http://localhost:3000/libros` (en desarrollo) o al dominio cloud en producción.
+3. Se recibe un JSON con libros, y se renderiza en una lista HTML.
+
+
+
